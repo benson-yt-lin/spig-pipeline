@@ -1,4 +1,4 @@
 version: 1.1.4
-name: java-maven
+name: java-spig-maven
 runtime: java
 build-tool: maven
