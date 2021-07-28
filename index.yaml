@@ -18,6 +18,7 @@ pipelines:
     version: 1.1.4
   appmod-liberty:
     url: https://benson-yt-lin.github.io/spig-pipeline/stable/appmod-liberty-1.1.5.tar.gz
+    name: appmod-liberty
     version: 1.1.5
 branches:
   stable:
@@ -54,3 +55,5 @@ branches:
         name: appmod-liberty
         version: latest
       - url: https://benson-yt-lin.github.io/spig-pipeline/stable/appmod-liberty-1.1.5.tar.gz
+        name: appmod-liberty
+        version: 1.1.5
