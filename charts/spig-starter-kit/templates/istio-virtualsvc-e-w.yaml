@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ include "spig-starter-kit.fullname" . }}-east-west-vsvc
+spec:
+  hosts:
+  - hello-world-svc.project01-dev.svc.cluster.local
+  http:
+  - name: "hello-world-svc-ew-routes"
+    match:
+    - uri:
+        prefix: /ibm/rest/testing/hello-world
+    route:
+    - destination:
+        #host: hello-world-svc.project01-dev.svc.cluster.local
+        host: {{ include "spig-starter-kit.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+        port:
+          number: 8080
+#    fault:
+#      abort:
+#        httpStatus: 502
+#        percent: 50

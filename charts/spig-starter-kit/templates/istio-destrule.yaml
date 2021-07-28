@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ include "spig-starter-kit.fullname" . }}-dest-rule
+spec:
+  host: {{ include "spig-starter-kit.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
+  trafficPolicy:
+#    tls:
+#      mode: ISTIO_MUTUAL
+#    connectionPool:
+#      http:
+#        http1MaxPendingRequests: 1
+#        maxRequestsPerConnection: 1
+#      tcp:
+#        maxConnections: 1
+#    outlierDetection:
+#      baseEjectionTime: 180.000s
+#      consecutiveErrors: 1
+#      interval: 1.000s
+#      maxEjectionPercent: 100
